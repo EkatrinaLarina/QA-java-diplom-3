@@ -9,9 +9,9 @@ public class MainPage {
     private final By bunsSwitch = By.xpath("//span[text()='Булки']");   //переключатель "Булки"
     private final By saucesSwitch = By.xpath("//span[text()='Соусы']");   //переключатель "Соусы"
     private final By fillingsSwitch = By.xpath("//span[text()='Начинки']");   //переключатель "Начинки"
-    private final By bunsHeader = By.xpath("//h2[text()='Булки']");   //заголовок "Булки"
-    private final By saucesHeader = By.xpath("//h2[text()='Соусы']");   //заголовок "Соусы"
-    private final By fillingsHeader = By.xpath("//h2[text()='Начинки']");   //заголовок "Начинки"
+    private final By bunsIsSelected = By.xpath(".//span[text()='Булки']/parent::div[contains(@class,'tab_tab_type_current__2BEPc')]");
+    private final By saucesIsSelected = By.xpath(".//span[text()='Соусы']/parent::div[contains(@class,'tab_tab_type_current__2BEPc')]");
+    private final By fillingsIsSelected = By.xpath(".//span[text()='Начинки']/parent::div[contains(@class,'tab_tab_type_current__2BEPc')]");
 
     private WebDriver driver;
 
@@ -42,12 +42,12 @@ public class MainPage {
     }
 
     public boolean bunsHeaderIsDisplayed() {
-        return driver.findElement(bunsHeader).isDisplayed();
+        return driver.findElement(bunsIsSelected).isDisplayed();
     }
     public boolean saucesHeaderIsDisplayed() {
-        return driver.findElement(saucesHeader).isDisplayed();
+        return driver.findElement(saucesIsSelected).isDisplayed();
     }
     public boolean fillingsHeaderIsDisplayed() {
-        return driver.findElement(fillingsHeader).isDisplayed();
+        return driver.findElement(fillingsIsSelected).isDisplayed();
     }
 }
